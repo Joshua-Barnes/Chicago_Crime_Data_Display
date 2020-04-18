@@ -92,55 +92,6 @@ def GET_MAP():
     return read_in_map
 
 GET_MAP() # GET_MAP() END
-'''
-# This function asks the user the specific data that they would like to filter on and view
-def GET_FILTER_DATA():
-    COMBINED_DATA_FRAME = GET_DATA()
-
-    # Ask the user what type of data that they would like to filter on
-    print('\n')
-    # Make a counter to put a umber next to each columns
-    counter = 1
-    # Loop and print out each possible column name for the user to filter on
-    for col in COMBINED_DATA_FRAME.columns:
-        print(counter, '-', col)
-        counter = counter + 1
-
-    # Ask the user what specific column they would like to filter on
-    crime_type = input("\nSelect the number that corresponds to the specific data that you would like to filter on: ")
-
-    # If the User Chooses 'Date', Display all possible dates:
-    counter = 1
-    if crime_type == '1':
-        # Create a variable that holds all of the unique values in the specific column that the user chose
-        unique_element = COMBINED_DATA_FRAME.Date.unique()
-        # Print the unique values of the specific column on a new line  for each value
-        for word in unique_element:
-            print(counter, '-',word)
-            counter = counter + 1
-    print("\nYou selected Date, now chose the specific date that you would like to filter on: ")
-
-    # If the user chooses 'Year', Display all of the unique values in the specific column that the user chooses
-    if crime_type == '2':
-        unique_element = COMBINED_DATA_FRAME.Year.unique()
-        # Print the unique values 
-        for word in unique_element:
-            print(counter, '-', word)
-            counter = counter + 1
-    print("\nYou selected Year, now choose the specific year that you would like to filter on: ")
-
-    # if th euser chooses 'ID', Display all of the unique values in the specific column that the user chooses
-    if crime_type == '3':
-        unique_element = COMBINED_DATA_FRAME.unique()
-        # Print unique values
-        for word in unique_element:
-            print(counter, '-', word)
-            counter = counter + 1
-    print("\nYou selected ID, now enter the specific ID that you would like to search for: ")
-
-
-GET_FILTER_DATA() # DISPLAY_DATA() END
-'''
 
 #################################################################################################################################################################################################################################
 # This function uses the map from GET_MAP() and plots points on it retrieved from GET_DATA()
